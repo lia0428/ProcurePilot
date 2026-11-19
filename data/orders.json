@@ -1,0 +1,32 @@
+[
+  {
+    "order_id": "abe8d3b3b36a",
+    "product_name": "键盘",
+    "current_stock": 8,
+    "target_stock": 50,
+    "quantity": 42,
+    "status": "rejected",
+    "created_at": "2026-11-10T19:53:04",
+    "reviewed_at": "2026-11-10T21:09:12"
+  },
+  {
+    "order_id": "07b0e63ecd4b",
+    "product_name": "键盘",
+    "current_stock": 8,
+    "target_stock": 30,
+    "quantity": 22,
+    "status": "approved",
+    "created_at": "2026-11-10T20:00:06",
+    "reviewed_at": "2026-11-10T21:08:33"
+  },
+  {
+    "order_id": "f2fcd1687b61",
+    "product_name": "键盘",
+    "current_stock": 8,
+    "target_stock": 50,
+    "quantity": 42,
+    "status": "approved",
+    "created_at": "2026-11-10T21:01:12",
+    "reviewed_at": "2026-11-10T21:01:12"
+  }
+]
