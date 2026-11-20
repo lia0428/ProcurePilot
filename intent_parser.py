@@ -9,10 +9,18 @@ from pydantic import BaseModel, Field, ValidationError
 # 1. 加载环境变量
 load_dotenv()
 
-client = OpenAI(
-    api_key=os.getenv("GLM_API_KEY"),
-    base_url="https://open.bigmodel.cn/api/paas/v4/"
-)
+def get_client():
+    api_key = os.getenv("GLM_API_KEY")
+
+    if not api_key:
+        raise RuntimeError(
+            "缺少 GLM_API_KEY，请在 .env 文件中配置。"
+        )
+
+    return OpenAI(
+        api_key=api_key,
+        base_url="https://open.bigmodel.cn/api/paas/v4/"
+    )
 #加载.env文件中的环境变量，并使用OpenAI类创建一个客户端对象，用于与OpenAI API进行交互。api_key：OpenAI API的密钥，用于身份验证。base_url：OpenAI API的基本URL，用于指定API的访问地址。
 
 MODEL = os.getenv("GLM_MODEL", "glm-4-flash")
@@ -27,6 +35,7 @@ class PurchaseIntent(BaseModel):
 # 3. 解析自然语言
 def parse_purchase_intent(user_message: str) -> PurchaseIntent:
 #user_message: str：表示预期传入字符串。-> PurchaseIntent：表示预期返回 PurchaseIntent 对象
+    client = get_client()
     response = client.chat.completions.create(
 #调用客户端的 create() 方法，实际发送请求，并把完整响应保存到 response
         model=MODEL,
