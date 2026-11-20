@@ -20,6 +20,19 @@ ProcurePilot 是一个基于 **GLM + LangGraph + FastAPI + SQLite + Streamlit** 
 | REST API | 使用 FastAPI 提供库存、供应商及订单接口 |
 | 自动化测试 | 使用 pytest 验证核心业务逻辑与 Agent 工作流 |
 
+
+## 系统演示
+
+### 自然语言采购与订单创建
+![采购需求与订单创建](screenshots/01_procurement.png)
+
+### 人工审批
+![采购订单审批](screenshots/02_approval.png)
+
+### 采购订单管理
+![采购订单列表](screenshots/03_orders.png)
+  
+
 ## 二、系统架构
 
 ```text
